@@ -93,7 +93,7 @@ function Main() {
     
     return (
         <div>
-            <div className="flex justify-center py-10">
+            <div className="flex flex-col items-center py-10">
                 <div ref={cardRef} className="bg-white p-4 rounded-lg shadow-md w-1/4 transition-all duration-300 ease-in-out">
                     {!expanded ? (
                         <div className="cursor-pointer group" onClick={() => setExpanded(true)}>
@@ -121,9 +121,9 @@ function Main() {
                             </div>
                             <div className="mt-4 flex justify-end">
                                 <button 
-                                    className={`${isPublic ? 'bg-green-500 hover:bg-green-600' : 'bg-yellow-500 hover:bg-yellow-600'} text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${!title.trim() ? 'opacity-50 cursor-not-allowed' : ''}`} 
+                                    className={`${isPublic ? 'bg-green-500 hover:bg-green-600' : 'bg-yellow-500 hover:bg-yellow-600'} text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${(!title.trim() || !content.trim()) ? 'opacity-50 cursor-not-allowed' : ''}`} 
                                     onClick={handleSaveNote}
-                                    disabled={!title.trim()}
+                                    disabled={!title.trim() && !content.trim()}
                                 >
                                     Save Note
                                 </button>
@@ -140,6 +140,11 @@ function Main() {
                         </>
                     )}
                 </div>
+                {expanded && (
+                    <p className="text-sm text-gray-500 mt-2">
+                        Double-click outside to close
+                    </p>
+                )}
             </div>
             <Notes notes={notes} onEdit={handleEditNote} onDelete={handleDeleteNote} />
         </div>

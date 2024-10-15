@@ -52,7 +52,6 @@ function PrivateRoute({ children }) {
     ( 
       toast.error('Please login to access this page'),
       <Navigate to="/login" />
-
     );
 }
 

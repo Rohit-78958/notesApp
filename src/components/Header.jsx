@@ -31,7 +31,7 @@ function Header() {
       <div className="flex-grow flex justify-end">
         <div className="relative group">
           <button onClick={handleLogout} className="flex items-center">
-            <MdLogout className="text-2xl text-gray-800 hover:scale-125 transition-all duration-300" />
+            {!isLoginOrRegister && <MdLogout className="text-2xl text-gray-800 hover:scale-125 transition-all duration-300" />}
           </button>
           <div className="absolute right-0 mt-2 py-2 w-24 bg-white rounded-md shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="text-sm text-gray-700 text-center">Logout</div>

@@ -76,6 +76,9 @@ function Main() {
     const handleDeleteNote = (id) => {
         const remainingNotes = notes.filter(note => note.id !== id);
         setNotes(remainingNotes);
+
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!currentUser) return;
         localStorage.setItem(`notes_${currentUser.username}`, JSON.stringify(remainingNotes));
         if (editingNoteId === id) {
             setEditingNoteId(null);
@@ -114,7 +117,7 @@ function Main() {
                                 ></textarea>
                             </div>
                             <div className="mt-4 flex justify-end">
-                                <button className={`${isPublic == true ? 'bg-green-500' : 'bg-yellow-500'} text-white px-4 py-2 rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500`} onClick={handleSaveNote}>
+                                <button className={`${isPublic == true ? 'bg-green-500 hover:bg-green-600' : 'bg-yellow-500 hover:bg-yellow-600'} text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`} onClick={handleSaveNote}>
                                     Save Note
                                 </button>
                             </div>

@@ -37,7 +37,7 @@ function Notes({ notes = [], onEdit, onDelete }) {
 
   return (
     <div className="px-10">
-      <Toaster position="top-right" />
+      <Toaster />
       <h2 className="text-2xl font-bold mb-4">Your Notes</h2>
       <div className="grid grid-cols-3 gap-4">
         {notes.length > 0 ? (

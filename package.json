@@ -1,5 +1,5 @@
 {
-  "homepage": "http://rohit-78958.github.io/notesApp",
+  "homepage": "https://rohit-78958.github.io/",
   "name": "notesapp",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

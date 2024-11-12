@@ -1,8 +1,7 @@
-# React + Vite
+# NotesApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a notes taking app which stores the notes in user local storage with functionality of making the notes public. the user can make his account and login to start making private and public notes.
 
-Currently, two official plugins are available:
+Tech used: React, TailWind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
